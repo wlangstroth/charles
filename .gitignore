@@ -1,0 +1,9 @@
+_darcs/
+dist/
+log/
+.cabal-sandbox
+cabal.sandbox.config
+state/
+site_key.txt
+static/img
+devel.cfg
