@@ -1,5 +1,10 @@
 <apply template="base">
-<img class="left" style="width: 50%" src="/mimulus.jpg">
+<div id="map"></div>
+<script>
+  L.mapbox.accessToken = 'pk.eyJ1Ijoid2xhbmdzdHJvdGgiLCJhIjoiNG9JaXEzMCJ9.63e2HCjhXmt8JfqLKwF8fg';
+  var map = L.mapbox.map('map', 'wlangstroth.l779a5cb');
+  map.setZoom(16);
+</script>
 <p>Flower Power is a newly established &#8220;U Pick&#8221; cut flower garden located at the corner of Metchosin Rd. and Witty Beach Rd. in beautiful, rural Metchosin. In it can be discovered a wide selection of perennial and annual flowers, the finest ornamental grasses and restios, flowering shrubs and vines and much foliage and filler material.</p>
 <p>Flower Power specializes in providing all the floral needs of rural/outdoor marriage ceremonies, special occasions and gatherings. We can design and provide extra large bouquets, arrangements and centerpieces, floral garlands and wreaths – whatever you may desire by way of floral/foliar decoration.</p>
 <p>*THE GARDEN IS ANTICIPATED TO OPEN FOR PICKING MID-APRIL*</p>
