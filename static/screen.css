@@ -41,7 +41,7 @@ h3 {
     font-style: italic;
 }
 p {
-    margin-bottom: 25px;
+    margin-bottom: 1.0em;
 }
 a: hover {
     text-decoration: none;
