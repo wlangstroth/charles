@@ -21,7 +21,8 @@
 <p>
 Flower harvesting is best done in the early morning or evening. The garden will therefore be open 7:30 – 11:00 am and 6:00 – 9:00 pm Monday, Wednesday, Friday and Saturday. If you wish to visit outside these hours, please email to advise when you would like to use the garden and we will meet you there.
 </p>
-<p>Visitors are encouraged to bring their own containers and secateurs, although we will have clippers and buckets of water that flower gatherers may use on site.</p>
+<h2>What to Bring</h2>
+<p>Visitors are encouraged to bring their own containers and secateurs, although we will have clippers and buckets of water for flower gatherers to use on site.</p>
 
 <h2>Perennial List</h2>
 <table class="table table-condensed table-striped">
