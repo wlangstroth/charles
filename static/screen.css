@@ -2,17 +2,20 @@
     font-family: NouveauFLF;
     src: url(NouveauFLF.ttf);
 }
+@font-face {
+    font-family: Fleurons;
+    src: url(Fleurons.ttf);
+}
 body {
-    font-size: 1.1em;
-    line-height: 1.6em;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
     background-color: white;
 }
 .clear {
     clear: both;
 }
 article.main {
-    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
 h1 {
@@ -23,11 +26,11 @@ h1 {
     font-weight: normal;
 }
 h2 {
-    font-size: 20px;
-    line-height: 20px;
-    margin-bottom: 15px;
-    font-family: sans-serif;
-    color: black;
+    font-family: 'Walter Turncoat';
+    font-size: 1.5em;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+    color: #333;
 }
 h3 {
     font-size: 16px;
@@ -46,10 +49,6 @@ a: hover {
 em {
     font-style: normal;
     font-weight: bold;
-}
-#content ul {
-    list-style-type: disc;
-    margin: 25px 25px;
 }
 img.right {
     float: right;
@@ -119,107 +118,10 @@ pre.code {
     width: 800px;
     margin: 0px auto;
 }
-.introcontent {
-    background-image: url(grass-bg.png);
-}
 .bgwrapper {
     margin: 50px 0;
     background-color: white;
     padding: 25px 0 50px 0;
-}
-.chapters {
-    list-style-type: decimal;
-    font-family: arial,serif;
-    font-size: 24px;
-    padding-left: 25px;
-    margin: 0px;
-    color: #408156 ;
-    margin-bottom: 25px;
-}
-.chapters > li {
-    font-family: georgia,serif;
-}
-.chapters > li > a {
-    text-decoration: none;
-    color: black;
-    display: block;
-    border-bottom: 1px solid #ddd;
-}
-.chapters > li > a: visited {
-    color: #555;
-}
-.chapters > li > a: hover {
-    color: #BD2A33;
-}
-.chapters > li > a.upcoming {
-    color: #888;
-}
-.chapters > li > a.upcoming: hover {
-    color: #888;
-}
-.chapters > li> ul  {
-    line-height: 40px;
-    font-family: arial, sans-serif;
-}
-.chapters > li> ul> li {
-    list-style-type: none;
-}
-.chapters > li > ul > li > a {
-    font-size: 16px;
-    color: black;
-    text-decoration: underline;
-}
-.chapters > li > ul > li > a: visited {
-    color: #777;
-}
-.chapters > li > ul > li > a: hover {
-    color: #BD2A33;
-}
-.footdiv {
-    width: 100%;
-    display: table;
-}
-.footdiv ul {
-    display: table-row;
-}
-.footdiv ul li {
-    display: table-cell;
-    width: 33%;
-}
-.prevlink {
-    padding-left: 20px;
-    background-image: url(http: //s3.amazonaws.com/lyah/prv.png);
-    background-position: 0px 3px;
-    background-repeat: no-repeat;
-}
-.nxtlink {
-    padding-right: 20px;
-    background-image: url(http: //s3.amazonaws.com/lyah/nxt.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-}
-.splashdiv {
-    width: 700px;
-    margin: 0 auto;
-    color: white;
-}
-.splashdiv a {
-    color: white;
-}
-.splashdiv .introtext {
-    width: 550px;
-    float: left;
-    text-align: left;
-}
-.splashdiv .go {
-    width: 150px;
-    float: left;
-    text-align: right;
-}
-p.exercise {
-    font-weight: bold;
-    color: black;
-    margin-bottom: 0px;
 }
 .dp-highlighter {
     width: auto !important;
@@ -235,9 +137,6 @@ p.exercise {
     margin-top: 14px;
     margin-bottom: 14px;
 }
-.newsplash li {
-    list-style-type: disc;
-}
 .errata {
     background-color: #ffeded;
     padding: 3px;
@@ -246,6 +145,31 @@ p.exercise {
     font-family: NouveauFLF;
     text-align: center;
 }
+.tagline {
+    color: #555;
+    margin: 0 0 0.5em 0;
+    font-size: 2.0em;
+    text-align: center;
+}
 #map {
     height: 280px;
+}
+table {
+    font-size: 0.8em;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    padding-left: 1em;
+    vertical-align: middle;
+}
+li:before {
+    content: "•";
+    vertical-align: middle;
+    padding-right: 0.5em;
+    font-size: 1.8em;
+    color: #006600;
 }
