@@ -3,7 +3,7 @@
 <script>
   L.mapbox.accessToken = 'pk.eyJ1Ijoid2xhbmdzdHJvdGgiLCJhIjoiNG9JaXEzMCJ9.63e2HCjhXmt8JfqLKwF8fg';
   var map = L.mapbox.map('map', 'wlangstroth.l779a5cb');
-  map.setZoom(16);
+  map.setZoom(15);
 </script>
 <p>Flower Power is a newly established &#8220;U Pick&#8221; cut flower garden located at the corner of Metchosin Rd. and Witty Beach Rd. in beautiful, rural Metchosin. We grow a wide selection of:
 <ul>
