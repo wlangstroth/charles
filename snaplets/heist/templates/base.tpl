@@ -34,26 +34,29 @@
       octx.textBaseline = 'top';
       octx.textAlign = 'center';
 
-      octx.clearRect(0, 0, w, h);
-      ctx.clearRect(0, 0, w, h);
+      function renderTitle() {
+        octx.clearRect(0, 0, w, h);
+        ctx.clearRect(0, 0, w, h);
 
-      //gradient = ctx.createLinearGradient(0, 0, w, 0);
-      //gradient.addColorStop("0","magenta");
-      //gradient.addColorStop("0.25","blue");
-      //gradient.addColorStop("0.4","green");
-      //gradient.addColorStop("0.65","orange");
-      //gradient.addColorStop("1.0","red");
+        //gradient = ctx.createLinearGradient(0, 0, w, 0);
+        //gradient.addColorStop("0","magenta");
+        //gradient.addColorStop("0.25","blue");
+        //gradient.addColorStop("0.4","green");
+        //gradient.addColorStop("0.65","orange");
+        //gradient.addColorStop("1.0","red");
 
-      octx.fillStyle = '#990000';
-      octx.fillText('FLOWER POWER', w / 2, 0);
+        octx.fillStyle = '#990000';
+        octx.fillText('FLOWER POWER', w / 2, 0);
 
-      i = w;
-      dltY = curve / textHeight;
-      y = 0;
-      while (i--) {
-        y = - curve * Math.sin(i * angleSteps * Math.PI / 180);
-        ctx.drawImage(os, i, 0, 1, textHeight, i, h, 1, y);
+        i = w;
+        dltY = curve / textHeight;
+        y = 0;
+        while (i--) {
+          y = - curve * Math.sin(i * angleSteps * Math.PI / 180);
+          ctx.drawImage(os, i, 0, 1, textHeight, i, h, 1, y);
+        }
       }
+      window.onload = renderTitle;
     </script>
   </body>
 </html>
