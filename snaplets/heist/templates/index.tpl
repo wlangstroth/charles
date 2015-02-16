@@ -5,7 +5,6 @@
   var map = L.mapbox.map('map', 'wlangstroth.l779a5cb');
   map.setZoom(15);
 </script>
-<h2>About Us</h2>
 <p>Flower Power is a newly established &#8220;U Pick&#8221; cut flower garden located at the corner of Metchosin Rd. and Witty Beach Rd. in beautiful, rural Metchosin. We grow a wide selection of:</p>
 <ul>
     <li>perennial and annual flowers</li>
@@ -13,17 +12,27 @@
     <li>flowering shrubs and vines</li>
     <li>much foliage and filler material</li>
 </ul>
+<div class="clear"></div>
+<hr>
+<img class="right" height="200" width="300" src="http://placehold.it/300x200&text=specialties">
 <p>Flower Power specializes in providing all the floral needs of rural/outdoor marriage ceremonies, special occasions and gatherings. We can design and provide extra large bouquets, arrangements and centerpieces, floral garlands and wreaths – whatever you may desire by way of floral/foliar decoration.</p>
-<h2>Seasonal Schedule</h2>
+<div class="clear"></div>
+<hr>
+<img class="left" height="200" width="300" src="http://placehold.it/300x200&text=calendar">
 <p>*THE GARDEN IS ANTICIPATED TO OPEN FOR PICKING MID-APRIL 2015*</p>
 <p>Flowering commences in early spring (Mar/Apr) building to a glorious full bloom in late spring/summer (May/Jun/ Jul), with many late bloomers persisting through autumn (Oct/Nov)</p>
-<h2>Hours of Operation</h2>
+<div class="clear"></div>
+<hr>
+<img class="right" height="200" width="300" src="http://placehold.it/300x200&text=sun+dial">
 <p>
 Flower harvesting is best done in the early morning or evening. The garden will therefore be open 7:30 – 11:00 am and 6:00 – 9:00 pm Monday, Wednesday, Friday and Saturday. If you wish to visit outside these hours, please email to advise when you would like to use the garden and we will meet you there.
 </p>
-<h2>What to Bring</h2>
+<div class="clear"></div>
+<hr>
+<img class="left" height="200" width="300" src="http://placehold.it/300x200&text=tools+and+boots">
 <p>Visitors are encouraged to bring their own containers and secateurs, although we will have clippers and buckets of water for flower gatherers to use on site.</p>
-
+<div class="clear"></div>
+<hr>
 <h2>Perennial List</h2>
 <table class="table table-condensed table-striped">
     <thead>
@@ -64,7 +73,6 @@ Flower harvesting is best done in the early morning or evening. The garden will 
         <td>$0.75 per stem</td>
         <td>May to Sept</td>
     </tr>
-
     <tr>
         <td>Allium</td>
         <td>Ornamental Onion</td>
@@ -72,12 +80,15 @@ Flower harvesting is best done in the early morning or evening. The garden will 
         <td>$1.50 per stem</td>
         <td>mid June to mid July</td>
     </tr>
-
+    <tr>
+      <td>Alstroemeria</td>
+      <td>Peruvian Lily</td>
+      <td>pinkish/orange flowers, 3 to 4 ft stems</td>
+      <td>$1.00 per stem</td>
+      <td>late May to autumn</td>
+    </tr>
 
 <!--
-Alstroemeria – Peruvian Lily  pinkish/orange flowers, 3 to 4 ft stems
-                $1.00 per stem        late May to autumn
-
 
 Anchusa – Alkanet                sky blue flowers
                 $1.00 per stem        late May to mid July

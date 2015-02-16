@@ -7,6 +7,7 @@ body {
     line-height: 1.5em;
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     background-color: white;
+    color: #444;
 }
 .clear {
     clear: both;
@@ -20,6 +21,9 @@ h1 {
     font-family: Georgia, serif;
     margin-bottom: 15px;
     font-weight: normal;
+}
+h1 img {
+    height
 }
 h2 {
     font-family: 'Walter Turncoat';
@@ -37,9 +41,9 @@ h3 {
     font-style: italic;
 }
 p {
-    margin-bottom: 1.0em;
+    margin: 2.2em 0 0 0;
 }
-a: hover {
+a:hover {
     text-decoration: none;
 }
 em {
