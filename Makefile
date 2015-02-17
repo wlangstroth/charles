@@ -23,7 +23,7 @@ remote_build:
 		rm -f $(current_dir); \
 		ln -s $(release_dir)/$(timestamp) $(current_dir); \
 		cd $(current_dir); \
-		bash -c -l "cabal sandbox init --sandbox $(base_dir)/shared; cabal install --dependencies-only --reorder-goals; cabal build";'
+		bash -c -l "cabal sandbox init --sandbox $(base_dir)/shared; cabal install --reorder-goals";'
 
 restart:
 	ssh ministry 'service charles restart'
