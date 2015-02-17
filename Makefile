@@ -1,22 +1,31 @@
 # Regarding this gross hackery, I can only say:
 # https://www.youtube.com/watch?v=Sv4Gui9hKCM
 
-deploy_dir = /var/www/charles/current
-build:
+base_dir = /var/www/charles
+current_dir = $(base_dir)/current
+release_dir = $(base_dir)/releases
+shared_dir = $(base_dir)/shared
+timestamp := $(shell date "+%Y%m%d%H%M%S")
+
+dev_build:
 	cabal clean
-	cabal install -fdevelopment --max-backjumps=-1
+	cabal install -fdevelopment --reorder-goals
 
 sync:
-	rsync -avz static/img deploy@ministry:$(deploy_dir)/static/
-	rsync devel.cfg deploy@ministry:$(deploy_dir)/
-
-remote_pull:
-	ssh -t deploy@ministry 'cd $(deploy_dir); git pull'
+	rsync -avz static/img deploy@ministry:$(current_dir)/static/
+	rsync devel.cfg deploy@ministry:$(current_dir)/
 
 remote_build:
-	ssh -t deploy@ministry 'cd $(deploy_dir); bash -l -c "cabal install"'
+	ssh deploy@ministry 'mkdir -p $(release_dir); \
+		mkdir -p $(shared_dir); \
+		cd $(release_dir); \
+		git clone https://github.com/wlangstroth/charles.git $(timestamp)/; \
+		rm -f $(current_dir); \
+		ln -s $(release_dir)/$(timestamp) $(current_dir); \
+		cd $(current_dir); \
+		bash -c -l "cabal sandbox init --sandbox $(base_dir)/shared; cabal install --dependencies-only --reorder-goals; cabal build";'
 
 restart:
 	ssh ministry 'service charles restart'
 
-deploy: remote_pull remote_build sync restart
+deploy: remote_build sync restart
