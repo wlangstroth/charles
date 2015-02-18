@@ -26,18 +26,16 @@ h1 img {
     height
 }
 h2 {
-    font-family: 'Walter Turncoat';
+    font-family: NouveauFLF;
     font-size: 1.5em;
     line-height: 1.2em;
     margin-bottom: 0.5em;
-    color: #333;
 }
 h3 {
     font-size: 16px;
     line-height: 16px;
     margin-bottom: 15px;
     font-family: serif;
-    color: #000;
     font-style: italic;
 }
 p {
@@ -88,7 +86,7 @@ table {
 ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1.0em 0;
 }
 li {
     padding-left: 1em;
