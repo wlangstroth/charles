@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Charles the Gardener</title>
-    <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="/bootstrap-tables.css"/>
     <link rel="stylesheet" type="text/css" href="/screen.css"/>
