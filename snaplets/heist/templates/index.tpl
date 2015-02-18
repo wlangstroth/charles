@@ -14,11 +14,13 @@
 </ul>
 <div class="clear"></div>
 <hr>
-<img class="right" width="300" src="/img/cute-flowers.jpg">
+<img class="right" width="300" src="/img/hydrangea.png">
 <p>Flower Power specializes in providing all the floral needs of rural/outdoor marriage ceremonies, special occasions and gatherings. We can design and provide extra large bouquets, arrangements and centerpieces, floral garlands and wreaths – whatever you may desire by way of floral/foliar decoration.</p>
 <div class="clear"></div>
 <hr>
-<img class="left" width="300" src="/img/clock.jpg">
+<p style="text-align: center; font-family: NouveauFLF; font-size: 1.5em; margin: 0;">The garden opens for picking mid April</p>
+<hr>
+<img class="left" width="300" src="/img/calendar2.png">
 <p>Flowering commences in early spring (Mar/Apr) building to a glorious full bloom in late spring/summer (May/Jun/ Jul), with many late bloomers persisting through autumn (Oct/Nov)</p>
 <p>
 Flower harvesting is best done in the early morning or evening. The garden will therefore be open 7:30 – 11:00 am and 6:00 – 9:00 pm Monday, Wednesday, Friday and Saturday. If you wish to visit outside these hours, please email to advise when you would like to use the garden and we will meet you there.
@@ -83,21 +85,29 @@ Flower harvesting is best done in the early morning or evening. The garden will 
       <td>$1.00 per stem</td>
       <td>late May to autumn</td>
     </tr>
+    <tr>
+      <td>Anchusa</td>
+      <td>Alkanet</td>
+      <td>sky blue flowers</td>
+      <td>$1.00 per stem</td>
+      <td>late May to mid July</td>
+    </tr>
+    <tr>
+      <td>Angelica</td>
+      <td>Kneeling Angelica</td>
+      <td>silver/white flowers and showy foliage</td>
+      <td>$1.00 to $2.50 per stem,<br>$0.50 per leaf</td>
+      <td>flowers June to August</td>
+    </tr>
+    <tr>
+      <td>Armeria</td>
+      <td>Thrift, Sea Pink</td>
+      <td>18 in stems in white, pinks and red</td>
+      <td>$1.00 per 3 stems</td>
+      <td>mid april to Autumn</td>
+    </tr>
 
 <!--
-
-Anchusa – Alkanet                sky blue flowers
-                $1.00 per stem        late May to mid July
-
-
-Angelica – Kneeling Angelica        silver/white flowers and showy foliage
-                $2.50 to $1.00 per stem, $0.50 per leaf        flowers June to August
-
-
-Armeria – Thrift, Sea Pink        18 in stems in white, pinks and red
-                $1.00 per 3 stems        mid april to Autumn
-
-
 Artemisia – Wormwood (A. lactiflora)        white flowers
                 $1.00 per stem        late July to Autumn
 
