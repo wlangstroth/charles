@@ -28,6 +28,7 @@ routes :: [(ByteString, Handler App App ())]
 routes = [ ("", ifTop homePage)
          , ("/admin/flowers/:name", adminFlowerPage)
          , ("/admin/flowers", adminFlowerListPage)
+         , ("/admin/flowers/delete/:name", deleteFlowerPage)
          , ("", serveDirectory "static")
          ]
 

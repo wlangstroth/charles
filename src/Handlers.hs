@@ -113,3 +113,13 @@ newFlowerForm = FlowerListing
     <*> "description" .: D.text Nothing
     <*> "price" .: D.text Nothing
     <*> "bloom" .: D.text Nothing
+
+deleteFlowerPage :: AppHandler ()
+deleteFlowerPage = do
+    name <- getParam "name"
+    case name of
+      Just s -> do
+          update $ FlowerDelete $ E.decodeUtf8 s
+          render "admin-index"
+      Nothing -> do
+          render "admin-index"
