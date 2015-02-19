@@ -7,3 +7,4 @@ state/
 site_key.txt
 static/img
 devel.cfg
+users.json
