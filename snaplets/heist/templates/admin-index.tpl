@@ -1,7 +1,7 @@
 <apply template="admin">
   <h1>Plant List</h1>
   <div>
-    <table>
+    <table class="table">
       <thead>
       <tr>
         <th>Latin</th>
@@ -21,10 +21,10 @@
           <dfInputText ref="common"/>
         </td>
         <td>
-          <dfInputText ref="description"/>
+          <dfInputText ref="description" style="width: 25em"/>
         </td>
         <td>
-          <dfInputText ref="price"/>
+          <dfInputText ref="price" style="width: 17em"/>
         </td>
         <td>
           <dfInputText ref="bloom"/>
