@@ -111,3 +111,9 @@ input[name="flower.description"] {
 .clipper-info {
     padding-top: 2.5em;
 }
+.announce-banner {
+    font-family: NouveauFLF;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0;
+}

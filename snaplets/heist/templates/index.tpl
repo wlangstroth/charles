@@ -18,7 +18,7 @@
 <p class="specialize-info">Flower Power specializes in providing all the floral needs of rural/outdoor marriage ceremonies, special occasions and gatherings. We can design and provide extra large bouquets, arrangements and centerpieces, floral garlands and wreaths – whatever you may desire by way of floral/foliar decoration.</p>
 <div class="clear"></div>
 <hr>
-<p style="text-align: center; font-family: NouveauFLF; font-size: 1.5em; margin: 0;">The garden opens for picking mid April</p>
+<p class="announce-banner">~ The garden opens for picking mid April ~</p>
 <hr>
 <img class="left" width="200" src="/img/calendar2.png">
 <p class="calendar-info">
