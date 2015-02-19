@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
   </head>
   <body>
-    <div class="admin-container">
+    <div class="container">
 
       <apply-content/>
 
