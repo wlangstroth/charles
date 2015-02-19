@@ -77,10 +77,10 @@ adminFlowerListPage =  do
            update $ FlowerInsert flowerItem
            heistLocal (bindDigestiveSplices view) $
                renderWithSplices "admin-index" $
-                   "flowers" ## flowerListSplice
+                   "flowers" ## adminFlowerListSplice
        Nothing -> heistLocal (bindDigestiveSplices view) $
                   renderWithSplices "admin-index" $
-                      "flowers" ## flowerListSplice
+                      "flowers" ## adminFlowerListSplice
 
 adminFlowerPage :: AppHandler ()
 adminFlowerPage = do
