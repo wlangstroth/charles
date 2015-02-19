@@ -51,6 +51,24 @@ flowerRow (FlowerListing latin common desc price bloom) =
             td (toHtml price)
             td (toHtml bloom)
 
+adminFlowerListSplice :: I.Splice AppHandler
+adminFlowerListSplice = do
+    flowers <- lift $ query FlowerList
+    return $ concatMap adminFlowerRow $ flowersByLatin flowers
+
+adminFlowerRow :: FlowerListing -> [X.Node]
+adminFlowerRow (FlowerListing latin common desc price bloom) =
+    renderHtmlNodes $
+        tr $ do
+            td $ do
+                a ! A.href flowerLink $ toHtml latin
+            td (toHtml common)
+            td (toHtml desc)
+            td (toHtml price)
+            td (toHtml bloom)
+  where
+    flowerLink = toValue $ T.concat ["/admin/flowers/", latin]
+
 adminFlowerListPage :: AppHandler ()
 adminFlowerListPage =  do
     (view, result) <- runForm "flower" newFlowerForm
@@ -63,6 +81,22 @@ adminFlowerListPage =  do
        Nothing -> heistLocal (bindDigestiveSplices view) $
                   renderWithSplices "admin-index" $
                       "flowers" ## flowerListSplice
+
+adminFlowerPage :: AppHandler ()
+adminFlowerPage = do
+    name <- getParam "name"
+    case name of
+        Just s -> do
+            flower <-  query $ FlowerLookup $ E.decodeUtf8 s
+            (view, result) <- runForm "flower" $ adminFlowerForm flower
+            case result of
+                Just flowerData -> do
+                    update $ FlowerInsert flowerData
+                    heistLocal (bindDigestiveSplices view) $
+                        render "admin-flower"
+                Nothing -> heistLocal (bindDigestiveSplices view) $
+                               render "admin-flower"
+        Nothing -> render "admin-index"
 
 adminFlowerForm :: Monad m => Maybe FlowerListing -> Form T.Text m FlowerListing
 adminFlowerForm flower = FlowerListing

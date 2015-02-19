@@ -26,8 +26,9 @@ import           Handlers
 
 routes :: [(ByteString, Handler App App ())]
 routes = [ ("", ifTop homePage)
-         , ("", serveDirectory "static")
+         , ("/admin/flowers/:name", adminFlowerPage)
          , ("/admin/flowers", adminFlowerListPage)
+         , ("", serveDirectory "static")
          ]
 
 app :: SnapletInit App App
