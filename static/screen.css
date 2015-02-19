@@ -102,3 +102,12 @@ li:before {
 input[name="flower.description"] {
     width: 25em;
 }
+.specialize-info {
+    padding-top: 1.0em;
+}
+.calendar-info {
+    padding-top: 2.5em;
+}
+.clipper-info {
+    padding-top: 2.5em;
+}
