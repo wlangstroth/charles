@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/screen.css">
   </head>
   <body>
-    <h1>Plant List</h1>
     <div class="admin-container">
 
       <apply-content/>

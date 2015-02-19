@@ -1,4 +1,5 @@
 <apply template="admin">
+  <h1>Plant List</h1>
   <div>
     <table>
       <thead>
