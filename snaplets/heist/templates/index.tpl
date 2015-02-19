@@ -35,7 +35,7 @@ Flower harvesting is best done in the early morning or evening. The garden will 
     <thead>
     <tr>
         <th>Latin Name</th>
-        <th>Common Name(s)</th>
+        <th>Common<br>Name(s)</th>
         <th>Description</th>
         <th style="width: 10em">Price</th>
         <th>Blooms</th>
