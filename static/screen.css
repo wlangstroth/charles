@@ -99,3 +99,6 @@ li:before {
     font-size: 1.8em;
     color: #006600;
 }
+input[name="flower.description"] {
+    width: 25em;
+}
