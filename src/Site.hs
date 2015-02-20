@@ -37,7 +37,7 @@ routes = [ ("", ifTop homePage)
          ]
 
 app :: SnapletInit App App
-app = makeSnaplet "app" "An snaplet example application." Nothing $ do
+app = makeSnaplet "app" "Charles the Gardener site" Nothing $ do
     addRoutes routes
     h <- nestSnaplet "" heist $ heistInit "templates"
     s <- nestSnaplet "sess" sess $
