@@ -26,6 +26,9 @@ import           Handlers
 
 routes :: [(ByteString, Handler App App ())]
 routes = [ ("", ifTop homePage)
+         , ("/login",  with auth handleLoginSubmit)
+         , ("/logout", with auth handleLogout)
+         , ("/admin", adminHomePage)
          , ("/admin/flowers/:name", adminFlowerPage)
          , ("/admin/flowers", adminFlowerListPage)
          , ("/admin/flowers/delete/:name", deleteFlowerPage)

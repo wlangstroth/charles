@@ -36,6 +36,9 @@ homePage :: AppHandler ()
 homePage = Core.method GET $ renderWithSplices "index" $
             "flowers" ## flowerListSplice
 
+adminHomePage :: AppHandler ()
+adminHomePage = Core.method GET $ render "admin-index"
+
 flowerListSplice :: I.Splice AppHandler
 flowerListSplice = do
     flowers <- lift $ query FlowerList
@@ -76,10 +79,10 @@ adminFlowerListPage =  do
        Just flowerItem -> do
            update $ FlowerInsert flowerItem
            heistLocal (bindDigestiveSplices view) $
-               renderWithSplices "admin-index" $
+               renderWithSplices "admin-flower-list" $
                    "flowers" ## adminFlowerListSplice
        Nothing -> heistLocal (bindDigestiveSplices view) $
-                  renderWithSplices "admin-index" $
+                  renderWithSplices "admin-flower-list" $
                       "flowers" ## adminFlowerListSplice
 
 adminFlowerPage :: AppHandler ()
@@ -96,7 +99,7 @@ adminFlowerPage = do
                         render "admin-flower"
                 Nothing -> heistLocal (bindDigestiveSplices view) $
                                render "admin-flower"
-        Nothing -> render "admin-index"
+        Nothing -> render "admin-flower-list"
 
 adminFlowerForm :: Monad m => Maybe FlowerListing -> Form T.Text m FlowerListing
 adminFlowerForm flower = FlowerListing
@@ -120,6 +123,22 @@ deleteFlowerPage = do
     case name of
       Just s -> do
           update $ FlowerDelete $ E.decodeUtf8 s
-          render "admin-index"
+          render "admin-flower-list"
       Nothing -> do
-          render "admin-index"
+          render "admin-flower-list"
+
+handleLogin :: Maybe T.Text -> Handler App (AuthManager App) ()
+handleLogin authError = heistLocal (I.bindSplices errs) $ render "login"
+  where
+    errs = maybe noSplices splice authError
+    splice err = "loginError" ## I.textSplice err
+
+handleLoginSubmit :: Handler App (AuthManager App) ()
+handleLoginSubmit =
+    loginUser "login" "password" Nothing
+              (\_ -> handleLogin err) (redirect "/admin/flowers")
+  where
+    err = Just "Unknown user or password"
+
+handleLogout :: Handler App (AuthManager App) ()
+handleLogout = logout >> redirect "/"
