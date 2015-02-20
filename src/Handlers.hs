@@ -25,6 +25,8 @@ import qualified Text.XmlHtml as X
 
 import           Snap.Core
 import qualified Snap.Core as Core
+import           Snap.Snaplet
+import           Snap.Snaplet.Auth
 import           Snap.Snaplet.Heist
 import           Snap.Snaplet.AcidState
 
@@ -142,3 +144,9 @@ handleLoginSubmit =
 
 handleLogout :: Handler App (AuthManager App) ()
 handleLogout = logout >> redirect "/"
+
+handleNewUser :: Handler App (AuthManager App) ()
+handleNewUser = Core.method GET handleForm <|> Core.method POST handleFormSubmit
+  where
+    handleForm = render "new_user"
+    handleFormSubmit = registerUser "login" "password" >> redirect "/login"

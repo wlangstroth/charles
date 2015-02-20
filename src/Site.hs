@@ -28,6 +28,7 @@ routes :: [(ByteString, Handler App App ())]
 routes = [ ("", ifTop homePage)
          , ("/login",  with auth handleLoginSubmit)
          , ("/logout", with auth handleLogout)
+         , ("/new_user", with auth handleNewUser)
          , ("/admin", adminHomePage)
          , ("/admin/flowers/:name", adminFlowerPage)
          , ("/admin/flowers", adminFlowerListPage)

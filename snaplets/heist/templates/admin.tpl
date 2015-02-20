@@ -14,6 +14,7 @@
     </style>
   </head>
   <body>
+    <ifLoggedIn>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -33,5 +34,9 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    </ifLoggedIn>
+    <ifLoggedOut>
+      <p>You need to <a href="/login">Log in</a></p>
+    </ifLoggedOut>
   </body>
 </html>
