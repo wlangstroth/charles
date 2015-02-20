@@ -4,6 +4,7 @@ log/
 .cabal-sandbox
 cabal.sandbox.config
 state/
+state-backup/
 site_key.txt
 static/img
 devel.cfg
