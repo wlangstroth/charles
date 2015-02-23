@@ -150,3 +150,8 @@ handleNewUser = Core.method GET handleForm <|> Core.method POST handleFormSubmit
   where
     handleForm = render "new_user"
     handleFormSubmit = registerUser "login" "password" >> redirect "/login"
+
+error404Page :: AppHandler ()
+error404Page = do
+    modifyResponse $ setResponseStatus 404 "Not found"
+    render "404"

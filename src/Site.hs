@@ -46,5 +46,6 @@ app = makeSnaplet "app" "Charles the Gardener site" Nothing $ do
            initJsonFileAuthManager defAuthSettings sess "users.json"
     d <- nestSnaplet "flowers" flowers $ acidInit (FlowerDB Map.empty)
     addRoutes routes
+    wrapSite (\site -> site <|> error404Page)
     addAuthSplices h auth
     return $ App h s a d
