@@ -43,8 +43,8 @@ adminHomePage = Core.method GET $ render "admin-index"
 
 flowerListSplice :: I.Splice AppHandler
 flowerListSplice = do
-    flowers <- lift $ query FlowerList
-    return $ concatMap flowerRow $ flowersByLatin flowers
+    flowerList <- lift $ query FlowerList
+    return $ concatMap flowerRow $ flowersByLatin flowerList
 
 flowerRow :: FlowerListing -> [X.Node]
 flowerRow (FlowerListing latin common desc price bloom) =
@@ -79,7 +79,7 @@ adminFlowerListPage =  do
     (view, result) <- runForm "flower" newFlowerForm
     case result of
        Just flowerItem -> do
-           update $ FlowerInsert flowerItem
+           _ <- update $ FlowerInsert flowerItem
            heistLocal (bindDigestiveSplices view) $
                renderWithSplices "admin-flower-list" $
                    "flowers" ## adminFlowerListSplice
@@ -96,7 +96,7 @@ adminFlowerPage = do
             (view, result) <- runForm "flower" $ adminFlowerForm flower
             case result of
                 Just flowerData -> do
-                    update $ FlowerInsert flowerData
+                    _ <- update $ FlowerInsert flowerData
                     heistLocal (bindDigestiveSplices view) $
                         render "admin-flower"
                 Nothing -> heistLocal (bindDigestiveSplices view) $
@@ -124,7 +124,7 @@ deleteFlowerPage = do
     name <- getParam "name"
     case name of
       Just s -> do
-          update $ FlowerDelete $ E.decodeUtf8 s
+          _ <- update $ FlowerDelete $ E.decodeUtf8 s
           render "admin-flower-list"
       Nothing -> do
           render "admin-flower-list"
