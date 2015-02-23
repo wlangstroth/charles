@@ -1,13 +1,9 @@
 @font-face {
     font-family: NouveauFLF;
-    src: url(NouveauFLF.ttf);
+    src: url(/fonts/NouveauFLF.ttf);
 }
 body {
-    font-size: 1.2em;
-    line-height: 1.5em;
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    background-color: white;
-    color: #444;
+    font-size: 1.8em;
 }
 .clear {
     clear: both;
@@ -22,14 +18,12 @@ h1 {
     margin-bottom: 15px;
     font-weight: normal;
 }
-h1 img {
-    height
-}
 h2 {
     font-family: NouveauFLF;
     font-size: 1.5em;
     line-height: 1.2em;
     margin-bottom: 0.5em;
+    color: #444;
 }
 h3 {
     font-size: 16px;
@@ -39,7 +33,7 @@ h3 {
     font-style: italic;
 }
 p {
-    margin: 2.2em 0 0 0;
+    margin: 2.0em 0 0 0;
 }
 a:hover {
     text-decoration: none;
@@ -60,44 +54,9 @@ img.center {
     margin: 10px auto 25px auto;
     display: block;
 }
-#content {
-    width: 960px;
-    margin: 0px auto;
-}
 #main-title {
     font-family: NouveauFLF;
     text-align: center;
-}
-.tagline {
-    color: #555;
-    margin: 0 0 0.5em 0;
-    font-size: 2.0em;
-    text-align: center;
-}
-#map {
-    height: 300px;
-    width: 50%;
-    float: left;
-    margin-right: 3%;
-}
-table {
-    font-size: 0.8em;
-}
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 1.0em 0;
-}
-li {
-    padding-left: 1em;
-    vertical-align: middle;
-}
-li:before {
-    content: "•";
-    vertical-align: middle;
-    padding-right: 0.5em;
-    font-size: 1.8em;
-    color: #006600;
 }
 input[name="flower.description"] {
     width: 25em;
@@ -116,4 +75,26 @@ input[name="flower.description"] {
     font-size: 1.5em;
     text-align: center;
     margin: 0;
+    color: #444;
+}
+#map {
+    height: 250px;
+    width: 250px;
+    margin: 10px auto;
+}
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
 }

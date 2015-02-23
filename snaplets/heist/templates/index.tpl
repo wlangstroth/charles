@@ -1,10 +1,4 @@
 <apply template="base">
-<div id="map"></div>
-<script>
-  L.mapbox.accessToken = 'pk.eyJ1Ijoid2xhbmdzdHJvdGgiLCJhIjoiNG9JaXEzMCJ9.63e2HCjhXmt8JfqLKwF8fg';
-  var map = L.mapbox.map('map', 'wlangstroth.l779a5cb');
-  map.setZoom(15);
-</script>
 <p>Flower Power is a newly established &#8220;U Pick&#8221; cut flower garden located at the corner of Metchosin Rd. and Witty Beach Rd. in beautiful, rural Metchosin. We grow a wide selection of:</p>
 <ul>
     <li>Perennial and annual flowers</li>
@@ -30,19 +24,4 @@ Flower harvesting is best done in the early morning or evening. The garden will 
 <p class="clipper-info">Visitors are encouraged to bring their own containers and secateurs, although we will have clippers and buckets of water for flower gatherers to use on site.</p>
 <div class="clear"></div>
 <hr>
-<h2>Perennial List</h2>
-<table class="table table-condensed table-striped">
-    <thead>
-    <tr>
-        <th>Latin Name</th>
-        <th>Common<br>Name(s)</th>
-        <th>Description</th>
-        <th style="width: 10em">Price</th>
-        <th>Blooms</th>
-    </tr>
-    </thead>
-    <tbody>
-        <flowers/>
-    </tbody>
-</table>
 </apply>

@@ -8,6 +8,8 @@ module Site
   ( app
   ) where
 
+import           Control.Applicative
+
 import           Data.ByteString (ByteString)
 import qualified Data.Map as Map
 
