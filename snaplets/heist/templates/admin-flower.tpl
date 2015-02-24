@@ -1,5 +1,5 @@
 <apply template="admin">
-  <h1>Edit Plant</h1>
+  <h1 class="page-header">Edit Plant</h1>
   <div class="admin-form">
     <dfChildErrorList/>
     <dfForm action="/admin/flowers" class="form-horizontal">
@@ -35,7 +35,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <dfInputSubmit/>
+        <dfInputSubmit class="btn btn-primary"/>
       </div>
     </div>
     </dfForm>

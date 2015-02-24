@@ -1,5 +1,5 @@
 <apply template="admin">
-  <h1>Flowers</h1>
+  <h1 class="page-header">Flowers</h1>
   <div>
     <table class="table">
       <thead>
@@ -30,7 +30,7 @@
           <dfInputText ref="bloom"/>
         </td>
         <td>
-          <dfInputSubmit/>
+          <dfInputSubmit class="btn btn-primary"/>
         </td>
       </tr>
       </dfForm>
