@@ -7,6 +7,8 @@ import           Prelude hiding (div)
 
 import           Control.Monad.Trans (lift)
 
+import           Data.Aeson.Generic as JSON
+
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as E
 
@@ -155,3 +157,8 @@ error404Page :: AppHandler ()
 error404Page = do
     modifyResponse $ setResponseStatus 404 "Not found"
     render "404"
+
+flowersJson :: AppHandler ()
+flowersJson = do
+    flowerList <- query FlowerList
+    writeLBS $ JSON.encode flowerList

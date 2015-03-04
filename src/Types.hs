@@ -8,6 +8,7 @@ module Types where
 import           Control.Monad.Reader
 import           Control.Monad.State
 
+import           Data.Data
 import           Data.List
 import           Data.Function
 import           Data.SafeCopy
@@ -28,7 +29,7 @@ data FlowerListing = FlowerListing
     , flowerPriceDescription :: Text
     , flowerBloomRange :: Text
     }
-    deriving (Typeable, Eq)
+    deriving (Typeable, Eq, Data, Show)
 
 data FlowerDB = FlowerDB !(Map Text FlowerListing)
     deriving (Typeable)
