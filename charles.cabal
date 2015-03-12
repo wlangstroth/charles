@@ -1,5 +1,5 @@
 Name:                charles
-Version:             0.1.0.0
+Version:             0.1.1
 Synopsis:            Charles the Gardener's website
 Description:         Site for a you-pick flower farm
 License:             MIT
@@ -51,7 +51,7 @@ Executable charles
     build-depends:
       snap-loader-dynamic == 0.10.*
     cpp-options: -DDEVELOPMENT
-    ghc-options: -threaded -w
+    ghc-options: -threaded -Wall
   else
     ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
                  -fno-warn-orphans

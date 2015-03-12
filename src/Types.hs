@@ -13,8 +13,6 @@ import           Data.List
 import           Data.Function
 import           Data.SafeCopy
 import           Data.Text (Text)
-import qualified Data.Text as T
-import           Data.Typeable
 import           Data.Map (Map)
 import qualified Data.Map as Map
 

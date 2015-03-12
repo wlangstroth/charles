@@ -45,8 +45,8 @@ adminHomePage = Core.method GET $ render "admin-index"
 
 flowerListSplice :: I.Splice AppHandler
 flowerListSplice = do
-    flowerList <- lift $ query FlowerList
-    return $ concatMap flowerRow $ flowersByLatin flowerList
+    theFlowers <- lift $ query FlowerList
+    return $ concatMap flowerRow $ flowersByLatin theFlowers
 
 flowerRow :: FlowerListing -> [X.Node]
 flowerRow (FlowerListing latin common desc price bloom) =
@@ -60,8 +60,8 @@ flowerRow (FlowerListing latin common desc price bloom) =
 
 adminFlowerListSplice :: I.Splice AppHandler
 adminFlowerListSplice = do
-    flowers <- lift $ query FlowerList
-    return $ concatMap adminFlowerRow $ flowersByLatin flowers
+    theFlowers <- lift $ query FlowerList
+    return $ concatMap adminFlowerRow $ flowersByLatin theFlowers
 
 adminFlowerRow :: FlowerListing -> [X.Node]
 adminFlowerRow (FlowerListing latin common desc price bloom) =
@@ -160,5 +160,5 @@ error404Page = do
 
 flowersJson :: AppHandler ()
 flowersJson = do
-    flowerList <- query FlowerList
-    writeLBS $ JSON.encode flowerList
+    theFlowers <- query FlowerList
+    writeLBS $ JSON.encode theFlowers
