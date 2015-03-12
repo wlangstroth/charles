@@ -16,8 +16,8 @@
 <hr>
 <img class="right" width="200" src="/img/calendar2.png">
 <p class="calendar-info">
-Flower harvesting is best done in the early morning or evening. The garden will therefore be open 7:30 – 11:00 am and 6:00 – 9:00 pm Monday, Wednesday, Friday and Saturday. If you wish to visit outside these hours, please email to advise when you would like to use the garden and we will meet you there.
-</p>
+Flower harvesting is best done in the early morning or evening. The garden will therefore be open 7:30 – 11:00 am and 6:00 – 9:00 pm Monday, Wednesday, Friday and Saturday.</p>
+<p>If you wish to visit outside these hours, please email <a href="mailto:chasknighton@gmail.com">chasknighton@gmail.com</a> or call 250-474-7062 to let us know when would like to use the garden and we will meet you there.</p>
 <div class="clear"></div>
 <hr>
 <img class="left" width="200" src="/img/secateurs.png">
