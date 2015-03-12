@@ -2,6 +2,7 @@
 # https://www.youtube.com/watch?v=Sv4Gui9hKCM
 
 base_dir = /var/www/charles
+staging_dir = /var/www/staging/charles/current
 current_dir = $(base_dir)/current
 
 build:
@@ -20,4 +21,6 @@ remote_build:
 restart:
 	ssh ministry 'service charles restart'
 
-deploy: remote_build sync restart
+staging: build_staging sync_staging restart_staging
+
+production: remote_build sync restart
