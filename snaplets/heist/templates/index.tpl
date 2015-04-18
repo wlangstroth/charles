@@ -12,7 +12,7 @@
 </div>
 <div class="clear"></div>
 <hr>
-<p class="announce-banner">~ The garden opens for picking mid April ~</p>
+<p class="announce-banner">~ The garden opens for picking on April 25 ~</p>
 <hr>
 <img class="right" width="200" src="/img/calendar2.png">
 <p class="calendar-info">
