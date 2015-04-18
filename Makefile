@@ -7,7 +7,7 @@ current_dir = $(base_dir)/current
 
 build:
 	cabal clean
-	cabal install -fdevelopment --reorder-goals
+	cabal install -j -fdevelopment --reorder-goals
 
 sync:
 	rsync -avz static/img deploy@ministry:$(current_dir)/static/
