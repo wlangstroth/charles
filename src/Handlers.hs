@@ -127,9 +127,9 @@ deleteFlowerPage = do
     case name of
       Just s -> do
           _ <- update $ FlowerDelete $ E.decodeUtf8 s
-          render "admin-flower-list"
-      Nothing -> do
-          render "admin-flower-list"
+          return ()
+      Nothing -> return ()
+    render "admin-flower-list"
 
 handleLogin :: Maybe T.Text -> Handler App (AuthManager App) ()
 handleLogin authError = heistLocal (I.bindSplices errs) $ render "login"
