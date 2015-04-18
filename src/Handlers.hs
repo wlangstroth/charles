@@ -67,7 +67,7 @@ adminFlowerRow :: FlowerListing -> [X.Node]
 adminFlowerRow (FlowerListing latin common desc price bloom) =
     renderHtmlNodes $
         tr $ do
-            td $ do
+            td $
                 a ! A.href flowerLink $ toHtml latin
             td (toHtml common)
             td (toHtml desc)
