@@ -8,6 +8,7 @@ module Types where
 import           Control.Monad.Reader
 import           Control.Monad.State
 
+import           Data.Aeson
 import           Data.Data
 import           Data.List
 import           Data.Function
@@ -64,3 +65,7 @@ makeAcidic ''FlowerDB [ 'flowerList
 
 flowersByLatin :: [FlowerListing] -> [FlowerListing]
 flowersByLatin = sortBy (compare `on` flowerLatinName)
+
+instance ToJSON FlowerListing where
+    toJSON (FlowerListing latin common desc price bloom) =
+        object ["latinName" .= latin, "commonName" .= common, "description" .= desc, "bloomRange" .= bloom]

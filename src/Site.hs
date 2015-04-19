@@ -30,7 +30,7 @@ routes :: [(ByteString, Handler App App ())]
 routes = [ ("", ifTop homePage)
          , ("/login",  with auth handleLoginSubmit)
          , ("/logout", with auth handleLogout)
-         -- , ("/flowers-json", flowersJson)
+         , ("/flowers-json", flowersJson)
          , ("/admin", adminHomePage)
          , ("/admin/flowers/:name", adminFlowerPage)
          , ("/admin/flowers", adminFlowerListPage)
