@@ -11,30 +11,25 @@ module Site
 import           Control.Applicative
 
 import           Data.ByteString (ByteString)
-import qualified Data.Map as Map
 
 import           Snap.Core
 import           Snap.Snaplet
-import           Snap.Snaplet.AcidState
 import           Snap.Snaplet.Auth
-import           Snap.Snaplet.Auth.Backends.JsonFile
+import           Snap.Snaplet.Auth.Backends.SqliteSimple
 import           Snap.Snaplet.Heist
 import           Snap.Snaplet.Session.Backends.CookieSession
+import           Snap.Snaplet.SqliteSimple
+
 import           Snap.Util.FileServe
 
 import           Application
-import           Types
 import           Handlers
 
-routes :: [(ByteString, Handler App App ())]
+routes :: [(ByteString, AppHandler ())]
 routes = [ ("", ifTop homePage)
          , ("/login",  with auth handleLoginSubmit)
          , ("/logout", with auth handleLogout)
-         , ("/flowers-json", flowersJson)
-         , ("/admin", adminHomePage)
-         , ("/admin/flowers/:name", adminFlowerPage)
-         , ("/admin/flowers", adminFlowerListPage)
-         , ("/admin/flowers/delete/:name", deleteFlowerPage)
+         , ("/flowers", flowerListPage)
          , ("", serveDirectory "static")
          ]
 
@@ -44,9 +39,8 @@ app = makeSnaplet "app" "Charles the Gardener site" Nothing $ do
     h <- nestSnaplet "" heist $ heistInit "templates"
     s <- nestSnaplet "sess" sess $
            initCookieSessionManager "site_key.txt" "sess" (Just 3600)
-    a <- nestSnaplet "auth" auth $
-           initJsonFileAuthManager defAuthSettings sess "users.json"
-    d <- nestSnaplet "flowers" flowers $ acidInit (FlowerDB Map.empty)
+    d <- nestSnaplet "db" db sqliteInit
+    a <- nestSnaplet "auth" auth $ initSqliteAuth sess d
     addRoutes routes
     wrapSite (<|> error404Page)
     addAuthSplices h auth

@@ -5,6 +5,8 @@
 
 module Types where
 
+import           Control.Applicative
+
 import           Control.Monad.Reader
 import           Control.Monad.State
 
@@ -68,4 +70,14 @@ flowersByLatin = sortBy (compare `on` flowerLatinName)
 
 instance ToJSON FlowerListing where
     toJSON (FlowerListing latin common desc price bloom) =
-        object ["latinName" .= latin, "commonName" .= common, "description" .= desc, "bloomRange" .= bloom]
+        object ["latinName" .= latin, "commonName" .= common, "description" .= desc, "price" .= price, "bloomRange" .= bloom]
+
+instance FromJSON FlowerListing where
+     parseJSON (Object v) = FlowerListing <$>
+                            v .: "latinName" <*>
+                            v .: "commonName" <*>
+                            v .: "description" <*>
+                            v .: "price" <*>
+                            v .: "bloomRange"
+     -- A non-Object value is of the wrong type, so fail.
+     parseJSON _          = mzero
