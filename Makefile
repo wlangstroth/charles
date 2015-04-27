@@ -17,7 +17,7 @@ sync:
 remote_build:
 	ssh deploy@ministry 'cd $(current_dir); \
 		git pull; \
-		bash -c -l "cabal install --reorder-goals";'
+		bash -c -l "cabal install -j --reorder-goals";'
 
 restart:
 	ssh ministry 'service charles restart'
