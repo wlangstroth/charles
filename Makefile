@@ -12,6 +12,7 @@ build:
 sync:
 	rsync -avz static/img deploy@ministry:$(current_dir)/static/
 	rsync devel.cfg deploy@ministry:$(current_dir)/
+	rsync db deploy@ministry:$(current_dir)/db/
 
 remote_build:
 	ssh deploy@ministry 'cd $(current_dir); \

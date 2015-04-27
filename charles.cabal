@@ -1,5 +1,5 @@
 Name:                charles
-Version:             0.1.1
+Version:             0.2.0
 Synopsis:            Charles the Gardener's website
 Description:         Site for a you-pick flower farm
 License:             MIT
@@ -35,7 +35,7 @@ Executable charles
     MonadCatchIO-transformers >= 0.2.1   && < 0.4,
     mtl                       >= 2       && < 3,
     mime-mail                 >= 0.4     && < 0.5,
-    regex-posix,
+    regex-posix               >= 0.95    && < 0.96,
     safecopy                  >= 0.8     && < 0.9,
     smtp-mail                 >= 0.1.4   && < 0.1.5,
     snap                      >= 0.13    && < 0.14,
@@ -43,8 +43,11 @@ Executable charles
     snap-server               >= 0.9     && < 0.11,
     snap-loader-static        >= 0.9     && < 0.10,
     snaplet-acid-state        >= 0.2.6   && < 0.3,
+    snaplet-sqlite-simple     >= 0.4     && < 0.5,
+    sqlite-simple             >= 0.4     && < 0.5,
     text                      >= 0.11    && < 1.2,
     time                      >= 1.1     && < 1.5,
+    transformers              >= 0.3     && < 0.4,
     xmlhtml                   >= 0.1     && < 0.3
 
   if flag(development)
