@@ -6,4 +6,4 @@ cabal.sandbox.config
 site_key.txt
 static/img
 devel.cfg
-db/
+*.db
