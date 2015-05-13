@@ -2,12 +2,12 @@
 
 Website for a "u-pick" specialty flower farm.
 
-## Cabal Install
+## Build
 
-The current version of snap needs to be compiled like so:
+The make file has a build option, so use
 
-    $ cabal install --reorder-goals
+```
+make build
+```
 
-For development, don't forget the develompment flag:
-
-    $ cabal install -f development --reorder-goals
+And you're golden.
