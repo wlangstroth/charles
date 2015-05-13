@@ -60,7 +60,7 @@ galleryPage = renderWithSplices "gallery" $ "gallery" ## imageGallerySplice
 imageGallerySplice :: I.Splice AppHandler
 imageGallerySplice = do
     images <- lift galleryList
-    return $ concatMap galleryImageBox images
+    return $ map lightboxLink images
 
 imageUrl :: GalleryImage -> Text
 imageUrl (GalleryImage im s _) = T.concat [sourcePrefix s, im, ".jpg"]
@@ -68,10 +68,21 @@ imageUrl (GalleryImage im s _) = T.concat [sourcePrefix s, im, ".jpg"]
     sourcePrefix Twitter = "https://pbs.twimg.com/media/"
     sourcePrefix OtherSource = "http://thing.org/"
 
-galleryImageBox :: GalleryImage -> [X.Node]
-galleryImageBox image = renderHtmlNodes $
-        div $
-            img ! A.src (toValue $ imageUrl image)
+lightboxLink :: GalleryImage -> X.Node
+lightboxLink image@(GalleryImage im s cap) =
+    X.Element "div" [] [imageLink]
+  where
+    imageLink = X.Element "a" attributes [imageNode]
+    attributes = [ ("class", "image-link")
+                 , ("href", imageUrl image)
+                 , ("data-lightbox", "gallery")
+                 , ("data-title", cap)
+                 ]
+    imageNode = X.Element "img" [("class", "gallery-image"), ("src", thumb), ("alt", cap)] []
+    thumb = T.concat [imageUrl image, ":thumb"]
+
+-- galleryImageBox :: GalleryImage -> [X.Node]
+-- galleryImageBox image = renderHtmlNodes $ div $ lightboxLink image
 
 -- User management ------------------------------------------------------------
 
@@ -101,4 +112,3 @@ error404Page :: AppHandler ()
 error404Page = do
     modifyResponse $ setResponseStatus 404 "Not found"
     render "404"
-
