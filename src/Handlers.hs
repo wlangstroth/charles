@@ -52,7 +52,7 @@ flowerRow (FlowerListing _ latin common desc price bloom) =
             td (toHtml bloom)
 
 flowerListPage :: AppHandler ()
-flowerListPage =  renderWithSplices "flowers" $ "flowers" ## flowerListSplice
+flowerListPage = renderWithSplices "flowers" $ "flowers" ## flowerListSplice
 
 galleryPage :: AppHandler ()
 galleryPage = renderWithSplices "gallery" $ "gallery" ## imageGallerySplice
@@ -62,30 +62,7 @@ imageGallerySplice = do
     images <- lift galleryList
     return $ map lightboxLink images
 
-flowerListPage :: AppHandler ()
-flowerListPage = renderWithSplices "flowers" $ "flowers" ## flowerListSplice
-
--- Forms -----------------------------------------------------------------------
-
-adminFlowerForm :: Monad m => Maybe FlowerListing -> Form Text m FlowerListing
-adminFlowerForm flower = FlowerListing
-    <$> "id" .: D.stringRead "Not a number" (fmap flowerId flower)
-    <*> "latin" .: D.text (fmap flowerLatinName flower)
-    <*> "common" .: D.text (fmap flowerCommonNames flower)
-    <*> "description" .: D.text (fmap flowerDescription flower)
-    <*> "price" .: D.text (fmap flowerPriceDescription flower)
-    <*> "bloom" .: D.text (fmap flowerBloomRange flower)
-
-newFlowerForm :: Monad m => Form Text m FlowerListing
-newFlowerForm = FlowerListing
-    <$> "id" .:  D.stringRead "Not a number" Nothing
-    <*> "latin" .: D.text Nothing
-    <*> "common" .: D.text Nothing
-    <*> "description" .: D.text Nothing
-    <*> "price" .: D.text Nothing
-    <*> "bloom" .: D.text Nothing
-
--- User Management -------------------------------------------------------------
+-- Gallery items ---------------------------------------------------------------
 
 imageUrl :: GalleryImage -> Text
 imageUrl (GalleryImage im s _) = T.concat [sourcePrefix s, im, ".jpg"]
