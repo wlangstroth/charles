@@ -7,16 +7,14 @@ import           Prelude hiding (div)
 
 import           Control.Monad.Trans (lift)
 
-import           Data.Text (Text)
 import qualified Data.Text as T
--- import qualified Data.Text.Encoding as E
+import           Data.Text (Text)
 
 import           Text.Blaze
 import           Text.Blaze.Html5 hiding (map)
 import qualified Text.Blaze.Html5.Attributes as A
 import           Text.Blaze.Renderer.XmlHtml
 
-import           Text.Digestive as D
 import           Text.Digestive.Heist ()
 import           Text.Digestive.Snap ()
 
@@ -38,9 +36,6 @@ homePage :: AppHandler ()
 homePage = Core.method GET $ renderWithSplices "index" $
             "flowers" ## flowerListSplice
 
-adminHomePage :: AppHandler ()
-adminHomePage = Core.method GET $ render "admin-index"
-
 flowerListSplice :: I.Splice AppHandler
 flowerListSplice = do
     theFlowers <- lift flowerList
@@ -56,27 +51,16 @@ flowerRow (FlowerListing _ latin common desc price bloom) =
             td (toHtml price)
             td (toHtml bloom)
 
-adminFlowerListSplice :: I.Splice AppHandler
-adminFlowerListSplice = do
-    theFlowers <- lift flowerList
-    return $ concatMap adminFlowerRow theFlowers
+flowerListPage :: AppHandler ()
+flowerListPage =  renderWithSplices "flowers" $ "flowers" ## flowerListSplice
 
-adminFlowerRow :: FlowerListing -> [X.Node]
-adminFlowerRow (FlowerListing _ latin common desc price bloom) =
-    renderHtmlNodes $
-        tr $ do
-            td $
-                a ! A.href flowerLink $ toHtml latin
-            td (toHtml common)
-            td (toHtml desc)
-            td (toHtml price)
-            td (toHtml bloom)
-  where
-    flowerLink = toValue $ T.concat ["/admin/flowers/", latin]
+galleryPage :: AppHandler ()
+galleryPage = renderWithSplices "gallery" $ "gallery" ## imageGallerySplice
 
-adminFlowerListPage :: AppHandler ()
-adminFlowerListPage =  renderWithSplices "admin-flower-list" $
-                            "flowers" ## adminFlowerListSplice
+imageGallerySplice :: I.Splice AppHandler
+imageGallerySplice = do
+    images <- lift galleryList
+    return $ map lightboxLink images
 
 flowerListPage :: AppHandler ()
 flowerListPage = renderWithSplices "flowers" $ "flowers" ## flowerListSplice
@@ -102,6 +86,27 @@ newFlowerForm = FlowerListing
     <*> "bloom" .: D.text Nothing
 
 -- User Management -------------------------------------------------------------
+
+imageUrl :: GalleryImage -> Text
+imageUrl (GalleryImage im s _) = T.concat [sourcePrefix s, im, ".jpg"]
+  where
+    sourcePrefix Twitter = "https://pbs.twimg.com/media/"
+    sourcePrefix OtherSource = "http://thing.org/"
+
+lightboxLink :: GalleryImage -> X.Node
+lightboxLink image@(GalleryImage im s cap) =
+    X.Element "div" [] [imageLink]
+  where
+    imageLink = X.Element "a" attributes [imageNode]
+    attributes = [ ("class", "image-link")
+                 , ("href", imageUrl image)
+                 , ("data-lightbox", "gallery")
+                 , ("data-title", cap)
+                 ]
+    imageNode = X.Element "img" [("class", "gallery-image"), ("src", thumb), ("alt", cap)] []
+    thumb = T.concat [imageUrl image, ":thumb"]
+
+-- User management ------------------------------------------------------------
 
 handleLogin :: Maybe Text -> Handler App (AuthManager App) ()
 handleLogin authError = heistLocal (I.bindSplices errs) $ render "login"

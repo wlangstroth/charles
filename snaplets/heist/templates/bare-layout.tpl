@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="/css/screen.css">
     <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css">
     <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js"></script>
+    <link rel="stylesheet" href="/css/lightbox.css">
+    <script src="/js/vendor/jquery-1.11.1.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -14,5 +16,6 @@
         <apply-content/>
       </div>
     </div>
+    <script src="/js/vendor/lightbox.js"></script>
   </body>
 </html>

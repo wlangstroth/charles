@@ -23,7 +23,7 @@ restart:
 	ssh ministry 'service charles restart'
 
 server:
-	cabal exec charles -- -p 8040
+	cabal exec charles -- -p 8030
 
 staging: build_staging sync_staging restart_staging
 

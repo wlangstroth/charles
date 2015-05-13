@@ -30,6 +30,7 @@ routes = [ ("", ifTop homePage)
          , ("/login",  with auth handleLoginSubmit)
          , ("/logout", with auth handleLogout)
          , ("/flowers", flowerListPage)
+         , ("/gallery", galleryPage)
          , ("", serveDirectory "static")
          ]
 

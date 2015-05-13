@@ -98,3 +98,8 @@ input[name="flower.description"] {
 .sidebar-module-inset ol:last-child {
   margin-bottom: 0;
 }
+
+#gallery-container > div {
+    float: left;
+    margin: 0.5em 1.0em 0.5em 0;
+}
