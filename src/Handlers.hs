@@ -81,9 +81,6 @@ lightboxLink image@(GalleryImage im s cap) =
     imageNode = X.Element "img" [("class", "gallery-image"), ("src", thumb), ("alt", cap)] []
     thumb = T.concat [imageUrl image, ":thumb"]
 
--- galleryImageBox :: GalleryImage -> [X.Node]
--- galleryImageBox image = renderHtmlNodes $ div $ lightboxLink image
-
 -- User management ------------------------------------------------------------
 
 handleLogin :: Maybe Text -> Handler App (AuthManager App) ()
