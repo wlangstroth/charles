@@ -7,6 +7,7 @@ import           Prelude hiding (div)
 
 import           Control.Monad.Trans (lift)
 
+import           Data.Text (Text)
 import qualified Data.Text as T
 -- import qualified Data.Text.Encoding as E
 
@@ -80,18 +81,9 @@ adminFlowerListPage =  renderWithSplices "admin-flower-list" $
 flowerListPage :: AppHandler ()
 flowerListPage = renderWithSplices "flowers" $ "flowers" ## flowerListSplice
 
-    -- (view, result) <- runForm "flower" newFlowerForm
-    -- case result of
-    --    Just flowerItem -> do
-    --        _ <- update $ FlowerInsert flowerItem
-    --        heistLocal (bindDigestiveSplices view) $
-    --            renderWithSplices "admin-flower-list" $
-    --                "flowers" ## adminFlowerListSplice
-    --    Nothing -> heistLocal (bindDigestiveSplices view) $
-    --               renderWithSplices "admin-flower-list" $
-    --                   "flowers" ## adminFlowerListSplice
+-- Forms -----------------------------------------------------------------------
 
-adminFlowerForm :: Monad m => Maybe FlowerListing -> Form T.Text m FlowerListing
+adminFlowerForm :: Monad m => Maybe FlowerListing -> Form Text m FlowerListing
 adminFlowerForm flower = FlowerListing
     <$> "id" .: D.stringRead "Not a number" (fmap flowerId flower)
     <*> "latin" .: D.text (fmap flowerLatinName flower)
@@ -100,7 +92,7 @@ adminFlowerForm flower = FlowerListing
     <*> "price" .: D.text (fmap flowerPriceDescription flower)
     <*> "bloom" .: D.text (fmap flowerBloomRange flower)
 
-newFlowerForm :: Monad m => Form T.Text m FlowerListing
+newFlowerForm :: Monad m => Form Text m FlowerListing
 newFlowerForm = FlowerListing
     <$> "id" .:  D.stringRead "Not a number" Nothing
     <*> "latin" .: D.text Nothing
@@ -109,7 +101,9 @@ newFlowerForm = FlowerListing
     <*> "price" .: D.text Nothing
     <*> "bloom" .: D.text Nothing
 
-handleLogin :: Maybe T.Text -> Handler App (AuthManager App) ()
+-- User Management -------------------------------------------------------------
+
+handleLogin :: Maybe Text -> Handler App (AuthManager App) ()
 handleLogin authError = heistLocal (I.bindSplices errs) $ render "login"
   where
     errs = maybe noSplices splice authError
