@@ -78,7 +78,7 @@ adminFlowerListPage =  renderWithSplices "admin-flower-list" $
                             "flowers" ## adminFlowerListSplice
 
 flowerListPage :: AppHandler ()
-flowerListPage =  renderWithSplices "flowers" $ "flowers" ## flowerListSplice
+flowerListPage = renderWithSplices "flowers" $ "flowers" ## flowerListSplice
 
     -- (view, result) <- runForm "flower" newFlowerForm
     -- case result of
@@ -135,4 +135,3 @@ error404Page :: AppHandler ()
 error404Page = do
     modifyResponse $ setResponseStatus 404 "Not found"
     render "404"
-
