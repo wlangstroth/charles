@@ -22,6 +22,9 @@ remote_build:
 restart:
 	ssh ministry 'service charles restart'
 
+server:
+	cabal exec charles -- -p 8030
+
 staging: build_staging sync_staging restart_staging
 
 production: remote_build sync restart
