@@ -2,6 +2,7 @@
     font-family: NouveauFLF;
     src: url(/fonts/NouveauFLF.ttf);
 }
+
 body {
     font-size: 1.8em;
 }
@@ -14,12 +15,12 @@ article.main {
 h1 {
     font-size: 60px;
     line-height: 60px;
-    font-family: Georgia, serif;
+    font-family: "Patrick Hand SC", sans-serif;
     margin-bottom: 15px;
     font-weight: normal;
 }
 h2 {
-    font-family: NouveauFLF;
+    font-family: "Patrick Hand SC", sans-serif;
     font-size: 1.5em;
     line-height: 1.2em;
     margin-bottom: 0.5em;
@@ -48,7 +49,7 @@ img.right {
 }
 img.left {
     float: left;
-    margin: 1.2em 1.2em 1.2em 0;
+    margin: 3.2em 1.2em 1.2em 0;
 }
 img.center {
     margin: 10px auto 25px auto;
@@ -71,8 +72,8 @@ input[name="flower.description"] {
     padding-top: 2.5em;
 }
 .announce-banner {
-    font-family: NouveauFLF;
-    font-size: 1.5em;
+    font-family: "Patrick Hand SC";
+    font-size: 2.0em;
     text-align: center;
     margin: 0;
     color: #444;
@@ -80,7 +81,7 @@ input[name="flower.description"] {
 #map {
     height: 250px;
     width: 100%;
-    margin: 10px auto;
+    margin: 3.0em auto 0 auto;
 }
 
 /* Sidebar modules for boxing content */
@@ -102,4 +103,11 @@ input[name="flower.description"] {
 #gallery-container > div {
     float: left;
     margin: 0.5em 1.0em 0.5em 0;
+}
+.sidebar-link {
+    font-family: "Patrick Hand SC";
+    font-size: 1.5em;
+}
+.sidebar-links {
+    margin: 1.0em 0;
 }
