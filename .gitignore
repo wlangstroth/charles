@@ -1,6 +1,6 @@
 _darcs/
 dist/
-log/
+log/*.log
 .cabal-sandbox
 cabal.sandbox.config
 site_key.txt
