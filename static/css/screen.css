@@ -78,36 +78,18 @@ input[name="flower.description"] {
     margin: 0;
     color: #444;
 }
+
 #map {
     height: 250px;
     width: 100%;
     margin: 3.0em auto 0 auto;
 }
 
-/* Sidebar modules for boxing content */
-.sidebar-module {
-  padding: 15px;
-  margin: 0 -15px 15px;
-}
-.sidebar-module-inset {
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-}
-.sidebar-module-inset p:last-child,
-.sidebar-module-inset ul:last-child,
-.sidebar-module-inset ol:last-child {
-  margin-bottom: 0;
+#news {
+    margin: 1.5em 0 0.7em 0;
 }
 
 #gallery-container > div {
     float: left;
     margin: 0.5em 1.0em 0.5em 0;
-}
-.sidebar-link {
-    font-family: "Patrick Hand SC";
-    font-size: 1.5em;
-}
-.sidebar-links {
-    margin: 1.0em 0;
 }

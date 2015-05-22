@@ -10,22 +10,17 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="main-title"><img src="/img/flower-power-title.png"></h1>
+      <a href="/">
+        <h1 id="main-title">
+          <img src="/img/flower-power-title.png" style="width: 400px">
+        </h1>
+      </a>
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-9">
           <apply-content/>
         </div>
-        <div class="col-sm-3 col-sm-offset-1">
-          <div id="map"></div>
-          <script>
-            L.mapbox.accessToken = 'pk.eyJ1Ijoid2xhbmdzdHJvdGgiLCJhIjoiNG9JaXEzMCJ9.63e2HCjhXmt8JfqLKwF8fg';
-            var map = L.mapbox.map('map', 'wlangstroth.l779a5cb');
-            map.setZoom(15);
-          </script>
-	  <div class="sidebar-links">
-	    <div class="sidebar-link"><a href="/flowers">» Flowers</a></div>
-	    <div class="sidebar-link"><a href="/gallery">» Gallery</a></div>
-	  </div>
+        <div class="col-sm-3">
+          <h2 id="news">News</h2>
           <a class="twitter-timeline" href="https://twitter.com/thegardenerisin" data-widget-id="569954747025997824" data-chrome="noheader nofooter">Tweets by @thegardenerisin</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</div>

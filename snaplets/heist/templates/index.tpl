@@ -1,14 +1,30 @@
 <apply template="base">
-    <img class="left" width="200" src="/img/hydrangea.png">
+    <!--     <img class="left" width="200" src="/img/hydrangea.png"> -->
+    <div id="map"></div>
+    <script>
+     L.mapbox.accessToken = 'pk.eyJ1Ijoid2xhbmdzdHJvdGgiLCJhIjoiNG9JaXEzMCJ9.63e2HCjhXmt8JfqLKwF8fg';
+     var map = L.mapbox.map('map', 'wlangstroth.l779a5cb');
+     map.setZoom(15);
+    </script>
     <p>Flower Power is a newly established &#8220;U Pick&#8221; cut flower garden located in beautiful, rural Metchosin. We specialize in providing all the floral needs of rural/outdoor marriage ceremonies, special occasions and gatherings. We can design and provide extra large bouquets, arrangements and centerpieces, floral garlands and wreaths – whatever you may desire by way of floral/foliar decoration. </p>
-    <div style="margin-left: 250px">
-        <p>Our garden offers a wide selection of:</p>
-        <ul style="margin-top: 1.5em;">
-            <li>Perennial and annual flowers</li>
-            <li>Ornamental grasses and restios</li>
-            <li>Flowering shrubs and vines</li>
-            <li>Foliage and filler material</li>
-        </ul>
+    <div>
+        <p style="text-align: center">Our garden offers a wide selection of:</p>
+        <div class="left-column" style="float:left">
+            <ul style="margin-top: 1.5em;">
+                <li>Perennials</li>
+                <li>Ornamental grasses</li>
+                <li>Flowering shrubs</li>
+                <li>Foliage</li>
+            </ul>
+        </div>
+        <div style="float:left">
+            <ul style="margin-top: 1.5em;">
+                <li>Annuals</li>
+                <li>Restios</li>
+                <li>Vines</li>
+                <li>Filler material</li>
+            </ul>
+        </div>
     </div>
     <div class="clear"></div>
     <hr>
