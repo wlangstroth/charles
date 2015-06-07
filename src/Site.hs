@@ -29,7 +29,7 @@ routes :: [(ByteString, AppHandler ())]
 routes = [ ("", ifTop homePage)
          , ("/login",  with auth handleLoginSubmit)
          , ("/logout", with auth handleLogout)
-         , ("/flowers", flowerListPage)
+         , ("/flower-list", flowerListPage)
          , ("/gallery", galleryPage)
          , ("", serveDirectory "static")
          ]

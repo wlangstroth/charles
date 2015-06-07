@@ -1,40 +1,16 @@
-@font-face {
-    font-family: NouveauFLF;
-    src: url(/fonts/NouveauFLF.ttf);
-}
-
 body {
+    background-color: #fafafa;
     font-size: 1.8em;
+    margin: 0;
 }
 .clear {
     clear: both;
 }
+h1,h2,h3 {
+    font-weight: 400;
+}
 article.main {
     border-bottom: 1px solid #ccc;
-}
-h1 {
-    font-size: 60px;
-    line-height: 60px;
-    font-family: "Patrick Hand SC", sans-serif;
-    margin-bottom: 15px;
-    font-weight: normal;
-}
-h2 {
-    font-family: "Patrick Hand SC", sans-serif;
-    font-size: 1.5em;
-    line-height: 1.2em;
-    margin-bottom: 0.5em;
-    color: #444;
-}
-h3 {
-    font-size: 16px;
-    line-height: 16px;
-    margin-bottom: 15px;
-    font-family: serif;
-    font-style: italic;
-}
-p {
-    margin: 2.0em 0 0 0;
 }
 a:hover {
     text-decoration: none;
@@ -43,71 +19,114 @@ em {
     font-style: normal;
     font-weight: bold;
 }
-img.right {
-    float: right;
-    margin: 1.2em 0 1.2em 1.2em;
-}
-img.left {
-    float: left;
-    margin: 3.2em 1.2em 1.2em 0;
-}
-img.center {
-    margin: 10px auto 25px auto;
-    display: block;
-}
-#main-title {
-    font-family: NouveauFLF;
-    text-align: center;
+#logo {
+    width: 300px;
+    margin-left: -20px;
 }
 input[name="flower.description"] {
     width: 25em;
 }
-.specialize-info {
-    padding-top: 1.0em;
-}
-.calendar-info {
-    padding-top: 0.5em;
-}
-.clipper-info {
-    padding-top: 2.5em;
-}
-.announce-banner {
-    font-family: "Patrick Hand SC";
-    font-size: 2.0em;
-    text-align: center;
-    margin: 0;
-    color: #444;
-}
+
 #map {
-    height: 250px;
+    height: 500px;
     width: 100%;
-    margin: 3.0em auto 0 auto;
 }
 
-/* Sidebar modules for boxing content */
-.sidebar-module {
-  padding: 15px;
-  margin: 0 -15px 15px;
-}
-.sidebar-module-inset {
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-}
-.sidebar-module-inset p:last-child,
-.sidebar-module-inset ul:last-child,
-.sidebar-module-inset ol:last-child {
-  margin-bottom: 0;
+#news {
+    margin: 1.0em 0 0.7em 0;
 }
 
 #gallery-container > div {
     float: left;
     margin: 0.5em 1.0em 0.5em 0;
 }
-.sidebar-link {
-    font-family: "Patrick Hand SC";
-    font-size: 1.7em;
+
+.top-menu li {
+    display: inline-block;
+    padding-left: 2.0em;
+    margin-top: 2.5em;
 }
-.sidebar-links {
-    margin: 1.0em 0;
+
+/* Slick carousel */
+
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:before,
+.slick-next:before
+{
+    font-size: 50px;
+    line-height: 0;
+    height: 2.0em;
+    background: black;
+    vertical-align: center;
+
+    opacity: .55;
+    color: white;
+
+    padding: 6px 20px 12px 18px;
+    border-radius: 3px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev:hover:before,
+.slick-next:hover:before
+{
+    opacity: .75;
+    line-height: 0;
+}
+
+.slick-next {
+    right: -45px;
+}
+.slick-next:before {
+    content: '>';
+}
+
+.slick-prev {
+    left: -7px;
+}
+.slick-prev:before {
+    content: '<';
+}
+
+/* Top navigation */
+
+.top-nav {
+    margin-top: 80px;
+    text-align: right;
+}
+.top-nav > li {
+    position: relative;
+    display: block;
+    float: right;
+}
+.top-nav > li > a {
+    position: relative;
+    display: block;
+    padding: 0.7em 0 0.7em 1.0em;
+}
+.facebook-logo {
+    width: 40px;
+}
+.twitter-logo {
+    width: 60px;
+}
+.footer-social {
+    margin-top: 1.0em;
+}
+.footer-info {
+    margin-top: 1.2em;
+    text-align: right;
+}
+img.leader {
+    margin: 0.5em 0 1.0em 0;
+    width: 100%;
 }

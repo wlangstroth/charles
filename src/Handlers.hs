@@ -10,9 +10,7 @@ import           Control.Monad.Trans (lift)
 import qualified Data.Text as T
 import           Data.Text (Text)
 
-import           Text.Blaze
 import           Text.Blaze.Html5 hiding (map)
-import qualified Text.Blaze.Html5.Attributes as A
 import           Text.Blaze.Renderer.XmlHtml
 
 import           Text.Digestive.Heist ()
@@ -52,7 +50,7 @@ flowerRow (FlowerListing _ latin common desc price bloom) =
             td (toHtml bloom)
 
 flowerListPage :: AppHandler ()
-flowerListPage = renderWithSplices "flowers" $ "flowers" ## flowerListSplice
+flowerListPage = renderWithSplices "flower-list" $ "flower-list" ## flowerListSplice
 
 galleryPage :: AppHandler ()
 galleryPage = renderWithSplices "gallery" $ "gallery" ## imageGallerySplice
@@ -71,7 +69,7 @@ imageUrl (GalleryImage im s _) = T.concat [sourcePrefix s, im, ".jpg"]
     sourcePrefix OtherSource = "http://thing.org/"
 
 lightboxLink :: GalleryImage -> X.Node
-lightboxLink image@(GalleryImage im s cap) =
+lightboxLink image@(GalleryImage _ _ cap) =
     X.Element "div" [] [imageLink]
   where
     imageLink = X.Element "a" attributes [imageNode]
